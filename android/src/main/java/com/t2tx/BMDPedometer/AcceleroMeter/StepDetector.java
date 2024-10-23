@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.emesonsantana.BMDPedometer;
+package com.t2tx.BMDPedometer;
 
 /**
  * Receives sensor updates and alerts a StepListener when a step has been detected.
@@ -23,8 +23,8 @@ public class StepDetector {
 
   private static final int ACCEL_RING_SIZE = 50;
   private static final int VEL_RING_SIZE = 10;
-  private static final float STEP_THRESHOLD = 16f; // Default 4f
-  private static final int STEP_DELAY_NS = 250000000; // Default 250000000
+  private static final float STEP_THRESHOLD = 7f; // Default 4f
+  private static final int STEP_DELAY_NS = 300000000; // Default 250000000
 
   private int accelRingCounter = 0;
   private float[] accelRingX = new float[ACCEL_RING_SIZE];
@@ -83,3 +83,4 @@ public class StepDetector {
     oldVelocityEstimate = velocityEstimate;
   }
 }
+

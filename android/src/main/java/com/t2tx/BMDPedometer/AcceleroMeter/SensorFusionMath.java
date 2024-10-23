@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.emesonsantana.BMDPedometer;
+package com.t2tx.BMDPedometer;
 
 /**
  * A collection of matrix and vector operations used specifically for sensor
@@ -65,3 +65,4 @@ public class SensorFusionMath {
   }
 
 }
+

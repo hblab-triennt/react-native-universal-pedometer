@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.emesonsantana.BMDPedometer;
+package com.t2tx.BMDPedometer;
 
 /**
  * Listens for alerts about steps being detected.

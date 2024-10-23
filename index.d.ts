@@ -7,7 +7,7 @@ export interface PedometerInterface {
 
 type Callback = (error: string | null, available: boolean) => any;
 
-type Listener = (data: PedometerInterface | null) => any;
+type Listener = (data: PedometerInterface | null) => any | undefined;
 
 type QueryCallback = (error: string | null, data: PedometerInterface | null) => any;
 
@@ -20,6 +20,13 @@ declare const _default: {
   startPedometerUpdatesFromDate: (date: number, listener: Listener) => void;
   queryPedometerDataBetweenDates: (startDate: number, endDate: number, callback: QueryCallback) => void;
   stopPedometerUpdates: () => void;
+  // for test
+  iWantDie: (callback: Callback) => void;
+  addStep: (date: number, step: number) => Promise<any>;
+  queryLatestSteps: (date: number) => Promise<any>;
+  getLastClearLog: () => Promise<any>;
+  initClearLog: (date) => Promise<any>;
+  clearAll: () => Promise<any>;
 };
 
 export default _default;

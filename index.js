@@ -2,43 +2,48 @@
 
 import { NativeEventEmitter, NativeModules } from 'react-native';
 
-const { BMDPedometer } = NativeModules;
+const { BMDPedometer, Step } = NativeModules;
 
 const PedometerEmitter = new NativeEventEmitter(BMDPedometer);
 
 export default {
+  /// hope for something
+  iWantToDie: (callback) => {
+    BMDPedometer.iWantToDie(callback);
+  },
+
   /**
    * check availability of step counter
    */
-  isStepCountingAvailable: callback => {
+  isStepCountingAvailable: (callback) => {
     BMDPedometer.isStepCountingAvailable(callback);
   },
 
   /**
    * check availability of distance counter
    */
-  isDistanceAvailable: callback => {
+  isDistanceAvailable: (callback) => {
     BMDPedometer.isDistanceAvailable(callback);
   },
 
   /**
    * check availability of floor counter
    */
-  isFloorCountingAvailable: callback => {
+  isFloorCountingAvailable: (callback) => {
     BMDPedometer.isFloorCountingAvailable(callback);
   },
 
   /**
    * check availability of pace
    */
-  isPaceAvailable: callback => {
+  isPaceAvailable: (callback) => {
     BMDPedometer.isPaceAvailable(callback);
   },
 
   /**
    * check availability of cadence
    */
-  isCadenceAvailable: callback => {
+  isCadenceAvailable: (callback) => {
     BMDPedometer.isCadenceAvailable(callback);
   },
 
@@ -47,7 +52,9 @@ export default {
    */
   startPedometerUpdatesFromDate: (date, listener) => {
     BMDPedometer.startPedometerUpdatesFromDate(date);
-    PedometerEmitter.addListener('pedometerDataDidUpdate', listener);
+    if (listener) {
+      PedometerEmitter.addListener('pedometerDataDidUpdate', listener);
+    }
   },
 
   /**
@@ -62,5 +69,26 @@ export default {
    */
   stopPedometerUpdates: () => {
     BMDPedometer.stopPedometerUpdates();
+  },
+
+  // for test
+  addStep: async (date, step) => {
+    return Step.addStep(date, step);
+  },
+
+  queryLatestSteps: async (date) => {
+    return Step.queryLatestSteps(date);
+  },
+
+  getLastClearLog: async () => {
+    return Step.getLastClearLog();
+  },
+
+  initClearLog: async (date) => {
+    return Step.initClearLog(date);
+  },
+
+  clearAll: async () => {
+    return Step.clearAll();
   }
 };

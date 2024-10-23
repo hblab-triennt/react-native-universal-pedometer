@@ -1,6 +1,6 @@
 {
   "name": "@t2tx/react-native-universal-pedometer",
-  "version": "2.0.3",
+  "version": "2.3.1",
   "description": "React Native universal pedometer. This is a fork from @JWWon/react-native-universal-pedometer.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:t2tx/react-native-universal-pedometer.git"
+    "url": "git@gitlab.com:mapfan/mile/react-native-pedometer.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   "license": "MIT",
   "types": "./lib/index.d.ts",
   "bugs": {
-    "url": "https://github.com/t2tx/react-native-universal-pedometer/issues"
+    "url": "https://gitlab.com/mapfan/mile/react-native-pedometer/-/issues"
   },
-  "homepage": "https://github.com/t2tx/react-native-universal-pedometer#readme",
+  "homepage": "https://gitlab.com/mapfan/mile/react-native-pedometer/-/blob/master/README.md",
   "peerDependencies": {
     "react-native": ">=0.60.0"
   },

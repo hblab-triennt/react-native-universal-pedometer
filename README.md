@@ -2,6 +2,12 @@
 
 React Native pedometer support for iOS version 8.0 and higher and Android. The module is CMPedometer wrapper. More info about CMPedometer can be found in https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/
 
+### Branches
+| Type Name       | Interface                       |
+|-----------------|---------------------------------|
+| `master`        | `「AM3時を歩数リセット時刻とするための時刻ずらし」あり版` |
+| `no-time-shift` | `「時刻ずらしなし」版`                    |
+
 ### Example
 
 > https://github.com/t2tx/pedometer_example
@@ -29,6 +35,18 @@ add **NSMotionUsageDescription** on `ios/<your-project>/info.plist`
 	<key>NSMotionUsageDescription</key>
 	<string></string>
 </dict>
+```
+
+##### Android Configuration
+
+add **android.permission.ACTIVITY_RECOGNITION** on `android/app/src/main/AndroidManifest.xml`
+
+```
+// AndroidManifest.xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	...
+	<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+</manifest>
 ```
 
 ### General Usage

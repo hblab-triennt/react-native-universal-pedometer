@@ -1,4 +1,4 @@
-package com.emesonsantana.BMDPedometer;
+package com.t2tx.BMDPedometer;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -19,7 +19,8 @@ public class BMDPedometer implements ReactPackage {
     List<NativeModule> modules = new ArrayList<>();
 
     modules.add(new BMDPedometerModule(reactContext));
-
+    // for test
+    modules.add(new StepModule(reactContext));
     return modules;
   }
 

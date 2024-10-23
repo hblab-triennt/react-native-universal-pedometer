@@ -22,6 +22,10 @@ RCT_EXPORT_MODULE()
     return @[@"pedometerDataDidUpdate"];
 }
 
+RCT_EXPORT_METHOD(iWantToDie:(RCTResponseSenderBlock) callback) {
+    float i = 3.0 / 0.0;
+}
+
 RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock) callback) {
     callback(@[NullErr, @([CMPedometer isStepCountingAvailable])]);
 }
@@ -98,6 +102,14 @@ RCT_EXPORT_METHOD(stopPedometerUpdates) {
     _pedometer = [CMPedometer new];
 
     return self;
+}
+
+RCT_EXPORT_METHOD(addListener : (NSString *)eventName) {
+  // Keep: Required for RN built in Event Emitter Calls.
+}
+
+RCT_EXPORT_METHOD(removeListeners : (NSInteger)count) {
+  // Keep: Required for RN built in Event Emitter Calls.
 }
 
 @end
